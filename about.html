@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us — Meklit Edetibeb</title>
+  <meta name="description" content="Learn about Meklit Edetibeb — Ethiopian pottery and sculpture studio in Addis Ababa. Our story, values, artisans, and craft process." />
+  <meta name="theme-color" content="#6b3e26" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f7f0e9;
+      --text: #2a2a2a;
+      --muted: #6e665e;
+      --brand: #6b3e26;
+      --brand-2: #b56a2a;
+      --card: #fff;
+      --accent: #efe5db;
+      --line: #e9dfd3;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin-inline: auto;
+      padding: 0rem 5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 240, 233, 0.95);
+      backdrop-filter: saturate(1.8) blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: var(--shadow);
+    }
+    
+    .brand h1 {
+      font-size: 20px;
+      line-height: 1;
+      margin: 0;
+      white-space: nowrap;
+    }
+    
+    .menu {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .menu a {
+      font-weight: 500;
+      position: relative;
+      padding: 6px 15px;
+    }
+    
+    .menu a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--brand);
+      transition: var(--transition);
+    }
+    
+    .menu a:hover:after {
+      width: 100%;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 50px;
+      border: 1px solid #d8cfc6;
+      background: #fff;
+      font-weight: 600;
+      transition: var(--transition);
+      gap: 8px;
+      box-shadow: var(--shadow);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    }
+    
+    .btn--brand {
+      background: var(--brand);
+      color: #fff;
+      border-color: #4c2e1c;
+    }
+    
+    .btn--brand:hover {
+      background: #5a3422;
+    }
+
+    /* Main content */
+    main section {
+      padding: 40px 0;
+    }
+    
+    h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0 0 16px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+    
+    h3 {
+      margin: 0 0 16px;
+      font-size: clamp(22px, 3vw, 28px);
+      position: relative;
+    }
+    
+    .muted {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: var(--accent);
+      color: #4a3a30;
+      border: 1px solid #e2d6c9;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    /* Grids & Cards */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+    
+    .grid--cards {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .grid--2 {
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    }
+    
+    .grid--3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid #eee3d8;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+    
+    .card .media {
+      aspect-ratio: 4/3;
+      background: #efe7df;
+      display: grid;
+      place-items: center;
+      color: #9a8f86;
+      font-weight: 700;
+      overflow: hidden;
+    }
+    
+    .card .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .card:hover .media img {
+      transform: scale(1.05);
+    }
+    
+    .card .content {
+      padding: 20px;
+    }
+
+    /* Band */
+    .band {
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      color: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      display: grid;
+      gap: 16px;
+      box-shadow: var(--shadow);
+    }
+    
+    .kicker {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7b6f66;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* Stats */
+    .stat {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: flex-start;
+      background: #fff;
+      border: 1px solid #eee3d8;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .stat:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+    }
+    
+    .stat strong {
+      font-size: 36px;
+      color: var(--brand);
+      line-height: 1;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+    }
+    
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      background: #efe7df;
+      display: grid;
+      place-items: center;
+      color: #9a8f86;
+      transition: var(--transition);
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.03);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--line);
+      color: #6b6057;
+      padding: 40px 0 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--brand);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Mobile menu */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--brand);
+      cursor: pointer;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .menu {
+        gap: 12px;
+      }
+      
+      .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        position: relative;
+      }
+      
+      .menu:not(.mobile-menu) {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none;
+      }
+      
+      .mobile-menu.active {
+        display: flex;
+      }
+      
+      h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden>ME</div>
+        <h1>Meklit Edetibeb</h1>
+      </a>
+      
+      <nav class="menu" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="about.html" aria-current="page">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      
+      <div class="menu">
+        <a class="btn" href="https://wa.me/251996995878" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="btn btn--brand" href="tel:+251996995878">
+          <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="about.html" aria-current="page">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div style="display: flex; gap: 12px; margin-top: 10px;">
+        <a class="btn" href="https://wa.me/251996995878" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="btn btn--brand" href="tel:+251996995878">
+          <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Story intro -->
+    <section class="reveal">
+      <span class="badge"><i class="fas fa-history"></i> Our Story</span>
+      <h2>Rooted in tradition, shaped for today.</h2>
+      <p class="muted" style="max-width: 800px; font-size: 18px;">Meklit Edetibeb celebrates Ethiopian craftsmanship — from Jebena and Shekla Dist to contemporary sculptures. We partner with local artisans to create functional, beautiful pieces for homes, ceremonies, and gifts.</p>
+    </section>
+
+    <!-- The story -->
+    <section class="grid grid--2 reveal">
+      <article class="card">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1596726895343-5b2f2b1b3f36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Our pottery workshop" loading="lazy">
+        </div>
+        <div class="content">
+          <h3>How we began</h3>
+          <p class="muted">Founded in <strong>2025</strong> in Addis Ababa, our small studio started with a simple goal: make authentic pieces accessible with fair pricing and reliable delivery. What began as family craft grew into a community of makers.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="media">
+          <img src="https://images.unsplash.com/photo-1580590513212-5eb3bec984be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Our founder" loading="lazy">
+        </div>
+        <div class="content">
+          <h3>Our approach</h3>
+          <p class="muted">We design with purpose, refine with customer feedback, and keep production local. Every order supports our artisans and preserves traditional techniques while embracing modern quality standards.</p>
+        </div>
+      </article>
+    </section>
+
+    <!-- Values -->
+    <section class="reveal">
+      <h3>Our Values</h3>
+      <div class="grid grid--cards">
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-hands"></i>
+            </div>
+            <strong>Authenticity</strong>
+            <p class="muted">Traditional forms and finishes, made by Ethiopian hands using time-honored techniques.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <strong>Fair partnership</strong>
+            <p class="muted">We pay fairly and reinvest in training, tools, and safety for all our artisans.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-award"></i>
+            </div>
+            <strong>Quality</strong>
+            <p class="muted">Consistent sizing, careful firing, and durable packaging to ensure your pieces arrive perfectly.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <strong>Sustainability</strong>
+            <p class="muted">Local clay sourcing and reduced-waste production methods to minimize environmental impact.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- The craft process -->
+    <section class="reveal">
+      <h3>The Craft Process</h3>
+      <div class="grid grid--cards">
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-digging"></i>
+            </div>
+            <strong>1) Clay selection</strong>
+            <p class="muted">We work with regional clays known for heat resistance and beautiful finish when fired.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-hand-sparkles"></i>
+            </div>
+            <strong>2) Forming</strong>
+            <p class="muted">Hand-building and wheel throwing techniques, depending on the piece and tradition.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-fire"></i>
+            </div>
+            <strong>3) Drying & firing</strong>
+            <p class="muted">Slow drying to prevent cracks; controlled firing for strength and beautiful coloration.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <div style="font-size: 32px; color: var(--brand); margin-bottom: 12px;">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <strong>4) Finishing</strong>
+            <p class="muted">Burnishing, engraving, and polishing for lasting beauty and authentic Ethiopian patterns.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Artisans -->
+    <section class="reveal">
+      <h3>Meet Our Artisans</h3>
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1578643334322-92607703cdd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Artisan A" loading="lazy">
+          </div>
+          <div class="content">
+            <strong>Solomon Tekle</strong>
+            <p class="muted">Specialist in Jebena forms with 8+ years experience. Trained by his grandmother in the traditional methods.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1578643334025-4a4e8a5e8b12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Artisan B" loading="lazy">
+          </div>
+          <div class="content">
+            <strong>Marta Assefa</strong>
+            <p class="muted">Expert in engraving & decorative finishes with 6+ years experience. Creates our most intricate patterns.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="media">
+            <img src="https://images.unsplash.com/photo-1596726895343-5b2f2b1b3f36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Artisan C" loading="lazy">
+          </div>
+          <div class="content">
+            <strong>Daniel Kebede</strong>
+            <p class="muted">Cookware & Shikna sets specialist and quality control lead. Ensures every piece meets our standards.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Impact / stats -->
+    <section class="reveal">
+      <h3>Our Impact</h3>
+      <div class="grid grid--3">
+        <div class="stat">
+          <strong id="statCustomers">500+</strong>
+          <span class="muted">Happy customers</span>
+        </div>
+        <div class="stat">
+          <strong id="statArtisans">7</strong>
+          <span class="muted">Artisans supported</span>
+        </div>
+        <div class="stat">
+          <strong id="statBreaks">0.8%</strong>
+          <span class="muted">Breakage rate</span>
+        </div>
+      </div>
+      <p class="muted" style="margin-top: 16px;">Numbers are placeholders — update with real figures when available.</p>
+    </section>
+
+    <!-- Gallery strip -->
+    <section class="reveal">
+      <h3>In The Studio</h3>
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1580590513212-5eb3bec984be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Studio photo 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1578643334322-92607703cdd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Studio photo 2" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1578643334025-4a4e8a5e8b12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Studio photo 3" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1596726895343-5b2f2b1b3f36?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Studio photo 4" loading="lazy">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1567168539597-9de3c6cbe6b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Studio photo 5" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="reveal">
+      <div class="band">
+        <div style="display: flex; justify-content: space-between; gap: 24px; align-items: center; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 300px;">
+            <div class="kicker" style="color: #efe5db">Visit the shop</div>
+            <strong style="font-size: 24px; display: block; margin-bottom: 12px;">Explore our latest Jebena, Shekla Dist, Shikna & sculptures.</strong>
+            <p style="color: #efe5db; margin: 0">Order by WhatsApp today — Chapa checkout is coming soon.</p>
+          </div>
+          <a class="btn" href="products.html" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.3);">
+            <i class="fas fa-shopping-bag"></i> Browse Products
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+        <div>
+          <div class="logo" style="margin-bottom: 16px;">ME</div>
+          <h4 style="margin-bottom: 16px;">Meklit Edetibeb</h4>
+          <p style="margin-bottom: 20px;">Handcrafted Ethiopian pottery and sculptures made with tradition and care in Addis Ababa.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/251996995878" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: 16px;">Quick Links</h4>
+          <div style="display: grid; gap: 12px;">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: 16px;">Contact Info</h4>
+          <div style="display: grid; gap: 12px;">
+            <div><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Addis Ababa, Ethiopia</div>
+            <div><i class="fas fa-phone" style="margin-right: 10px;"></i> +251 996 995878</div>
+            <div><i class="fas fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:sawerkit23@gmail.com">sawerkit23@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="height: 2px; background: linear-gradient(90deg, var(--flag-g), var(--flag-y), var(--flag-r)); margin: 40px 0 20px; border-radius: 2px; opacity: 0.7;"></div>
+      
+      <p style="margin: 14px 0; text-align: center;">
+        © <span id="year"></span> Meklit Edetibeb • Addis Ababa • Handmade with ❤️
+      </p>
+      <p class="muted" style="margin: 6px 0 0; font-size: 12px; text-align: center;">
+        Note: All images are from Unsplash as placeholders. Replace with your actual photos.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple reveal-on-scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { 
+        if (e.isIntersecting) { 
+          e.target.classList.add('visible'); 
+          obs.unobserve(e.target);
+        } 
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Products — Meklit Edetibeb</title>
+  <meta name="description" content="Browse Jebena, Shekla Dist, Shikna, and Ethiopian sculptures from Meklit Edetibeb. Handcrafted in Addis Ababa. Order via WhatsApp." />
+  <meta name="theme-color" content="#6b3e26" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f7f0e9;
+      --text: #2a2a2a;
+      --muted: #6e665e;
+      --brand: #6b3e26;
+      --brand-2: #b56a2a;
+      --card: #fff;
+      --accent: #efe5db;
+      --line: #e9dfd3;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+      --flag-g: #0b6e3f; 
+      --flag-y: #f1c232; 
+      --flag-r: #c62828;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin-inline: auto;
+      padding: 0rem 5rem;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247, 240, 233, 0.95);
+      backdrop-filter: saturate(1.8) blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: var(--shadow);
+    }
+    
+    .brand h1 {
+      font-size: 20px;
+      line-height: 1;
+      margin: 0;
+      white-space: nowrap;
+    }
+    
+    .menu {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .menu a {
+      font-weight: 500;
+      position: relative;
+      padding: 6px 15px;
+    }
+    
+    .menu a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--brand);
+      transition: var(--transition);
+    }
+    
+    .menu a:hover:after {
+      width: 100%;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 50px;
+      border: 1px solid #d8cfc6;
+      background: #fff;
+      font-weight: 600;
+      transition: var(--transition);
+      gap: 8px;
+      box-shadow: var(--shadow);
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    }
+    
+    .btn--brand {
+      background: var(--brand);
+      color: #fff;
+      border-color: #4c2e1c;
+    }
+    
+    .btn--brand:hover {
+      background: #5a3422;
+    }
+
+    /* Main content */
+    main section {
+      padding: 40px 0;
+    }
+    
+    h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin: 0 0 16px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+    
+    h3 {
+      margin: 0 0 16px;
+      font-size: clamp(22px, 3vw, 28px);
+      position: relative;
+    }
+    
+    .muted {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: var(--accent);
+      color: #4a3a30;
+      border: 1px solid #e2d6c9;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    /* Grids & Cards */
+    .grid {
+      display: grid;
+      gap: 24px;
+    }
+    
+    .grid--cards {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid #eee3d8;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+    
+    .card .media {
+      aspect-ratio: 4/3;
+      background: #efe7df;
+      display: grid;
+      place-items: center;
+      color: #9a8f86;
+      font-weight: 700;
+      overflow: hidden;
+    }
+    
+    .card .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .card:hover .media img {
+      transform: scale(1.05);
+    }
+    
+    .card .content {
+      padding: 24px;
+    }
+    
+    .price {
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--brand);
+    }
+    
+    .pill {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #e6dbcf;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 12px;
+      transition: var(--transition);
+    }
+    
+    .pill:hover {
+      background: var(--brand);
+      color: white;
+      border-color: var(--brand);
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 20px 0;
+      padding: 16px;
+      background: var(--accent);
+      border-radius: 16px;
+    }
+    
+    .control {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid #e6dbcf;
+      background: #fff;
+      border-radius: 50px;
+      padding: 10px 16px;
+      transition: var(--transition);
+    }
+    
+    .control:focus-within {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(107, 62, 38, 0.1);
+    }
+    
+    .control input, .control select {
+      border: none;
+      outline: none;
+      background: transparent;
+      font: inherit;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--line);
+      color: #6b6057;
+      padding: 40px 0 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--brand);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Modal */
+    dialog {
+      border: none;
+      border-radius: 20px;
+      padding: 0;
+      max-width: 900px;
+      width: 95vw;
+      box-shadow: var(--shadow);
+    }
+    
+    dialog::backdrop {
+      background: rgba(0,0,0,.5);
+      backdrop-filter: blur(4px);
+    }
+    
+    .modal {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    
+    .modal .media {
+      aspect-ratio: 4/3;
+      background: #efe7df;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+    
+    .modal .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .modal .body {
+      padding: 24px;
+    }
+    
+    .modal .close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      z-index: 10;
+      background: rgba(255,255,255,0.9);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border: 1px solid #e6dbcf;
+    }
+    
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 16px 0;
+    }
+    
+    .spec-item {
+      background: var(--accent);
+      padding: 12px;
+      border-radius: 12px;
+    }
+    
+    .spec-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Reveal on scroll */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Mobile menu */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--brand);
+      cursor: pointer;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .menu {
+        gap: 12px;
+      }
+      
+      .btn {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        position: relative;
+      }
+      
+      .menu:not(.mobile-menu) {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .mobile-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        display: none;
+      }
+      
+      .mobile-menu.active {
+        display: flex;
+      }
+      
+      .controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      
+      .control {
+        width: 100%;
+      }
+      
+      h2:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .modal {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none !important;
+      }
+      
+      .modal {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden>ME</div>
+        <h1>Meklit Edetibeb</h1>
+      </a>
+      
+      <nav class="menu" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="products.html" aria-current="page">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      
+      <div class="menu">
+        <a class="btn" href="https://wa.me/251996995878" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="btn btn--brand" href="tel:+251996995878">
+          <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html" aria-current="page">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div style="display: flex; gap: 12px; margin-top: 10px;">
+        <a class="btn" href="https://wa.me/251996995878" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="btn btn--brand" href="tel:+251996995878">
+          <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Intro -->
+    <section class="reveal">
+      <span class="badge"><i class="fas fa-gift"></i> Jebena • Shekla Dist • Shikna • Sculptures</span>
+      <h2>Our Products</h2>
+      <p class="muted" style="max-width: 800px; font-size: 18px;">Handcrafted pieces for coffee ceremony, kitchen, and decor. Use search and filters below. Click an item for details or order via WhatsApp.</p>
+      
+      <div class="controls" role="region" aria-label="Filters and sorting">
+        <label class="control" for="search">
+          <i class="fas fa-search"></i>
+          <input id="search" placeholder="Search products..." aria-label="Search products">
+        </label>
+        <label class="control" for="cat">
+          <i class="fas fa-filter"></i>
+          <select id="cat" aria-label="Filter by category">
+            <option value="all">All Categories</option>
+            <option value="jebena">Jebena</option>
+            <option value="shekla">Shekla Dist</option>
+            <option value="shikna">Shikna</option>
+            <option value="sculpture">Sculptures</option>
+          </select>
+        </label>
+        <label class="control" for="sort">
+          <i class="fas fa-sort"></i>
+          <select id="sort" aria-label="Sort products">
+            <option value="newest">Newest First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="name">Name A to Z</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <!-- Catalog -->
+    <section class="reveal">
+      <div id="cards" class="grid grid--cards" aria-live="polite"></div>
+      <p id="empty" class="muted" style="display:none; text-align: center; padding: 40px;">
+        <i class="fas fa-search" style="font-size: 48px; margin-bottom: 16px; display: block; color: var(--muted);"></i>
+        No items found. Try a different search or clear filters.
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+        <div>
+          <div class="logo" style="margin-bottom: 16px;">ME</div>
+          <h4 style="margin-bottom: 16px;">Meklit Edetibeb</h4>
+          <p style="margin-bottom: 20px;">Handcrafted Ethiopian pottery and sculptures made with tradition and care in Addis Ababa.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/251996995878" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: 16px;">Quick Links</h4>
+          <div style="display: grid; gap: 12px;">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="margin-bottom: 16px;">Contact Info</h4>
+          <div style="display: grid; gap: 12px;">
+            <div><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Addis Ababa, Ethiopia</div>
+            <div><i class="fas fa-phone" style="margin-right: 10px;"></i> +251 996 995878</div>
+            <div><i class="fas fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:sawerkit23@gmail.com">sawerkit23@gmail.com</a></div>
+          </div>
+        </div>
+      </div>
+      
+      <div style="height: 2px; background: linear-gradient(90deg, var(--flag-g), var(--flag-y), var(--flag-r)); margin: 40px 0 20px; border-radius: 2px; opacity: 0.7;"></div>
+      
+      <p style="margin: 14px 0; text-align: center;">
+        © <span id="year"></span> Meklit Edetibeb • Addis Ababa • Handmade with ❤️
+      </p>
+    </section>
+  </main>
+
+  <!-- Quick view modal -->
+  <dialog id="itemModal" aria-labelledby="itemTitle">
+    <div class="modal">
+      <button class="btn close" type="button" onclick="modal.close()" aria-label="Close modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <div id="modalMedia" class="media">
+        <i class="fas fa-image" style="font-size: 48px;"></i>
+      </div>
+      <div class="body">
+        <h3 id="itemTitle">Item title</h3>
+        <p class="muted" id="itemDesc">Description</p>
+        <p><strong id="itemPrice" class="price">0 ETB</strong> <span class="muted">• SKU: <span id="itemSku"></span> • <span id="itemCat"></span></span></p>
+        
+        <div class="specs-grid">
+          <div class="spec-item">
+            <strong>Dimensions</strong>
+            <p class="muted" id="itemDims">—</p>
+          </div>
+          <div class="spec-item">
+            <strong>Weight</strong>
+            <p class="muted" id="itemWeight">—</p>
+          </div>
+          <div class="spec-item">
+            <strong>Care Instructions</strong>
+            <p class="muted" id="itemCare">—</p>
+          </div>
+          <div class="spec-item">
+            <strong>Availability</strong>
+            <p class="muted">In Stock</p>
+          </div>
+        </div>
+        
+        <div style="display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap;">
+          <a id="waBtn" class="btn btn--brand" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+          </a>
+          <button class="btn" disabled title="Coming soon">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    // ===== Data =====
+    // Replace with your real products. Add photo via <img src="images/xxx.jpg" alt="…" class="media">.
+    const PRODUCTS = [
+      { 
+        id:'jb001', 
+        name:'Jebena — Classic Black', 
+        cat:'jebena', 
+        price:1800, 
+        desc:'Traditional coffee pot with smooth matte finish. Perfect for authentic Ethiopian coffee ceremonies.', 
+        media:'<img src="https://images.pexels.com/photos/33118328/pexels-photo-33118328.jpeg" alt="Jebena — Classic Black" class="media">', 
+        dims:'H 20cm', 
+        weight:'~500g', 
+        care:'Hand wash only. Warm gradually before use.', 
+        created:'2025-08-20'
+      },
+      { 
+        id:'jb002', 
+        name:'Jebena — Engraved Rim', 
+        cat:'jebena', 
+        price:2200, 
+        desc:'Hand-engraved details with traditional patterns; medium size for 4-6 servings.', 
+        media:'<img src="https://media.istockphoto.com/id/148340653/photo/brewing-coffee-with-jebena-using-coal.jpg?b=1&s=612x612&w=0&k=20&c=k7nHGXITmnTL_s0CaHg6BE0-cLGzyUjP6xurBKW9mNg=" alt="Jebena — Engraved Rim" class="media">', 
+        dims:'H 18cm', 
+        weight:'~480g', 
+        care:'Hand wash only. Warm gradually before use.', 
+        created:'2025-08-22'
+      },
+      { 
+        id:'sk101', 
+        name:'Shekla Dist — Medium', 
+        cat:'shekla', 
+        price:1200, 
+        desc:'Clay pan for injera side dishes; stove-safe and perfect for traditional cooking.', 
+        media:'<img src="https://images.pexels.com/photos/3692063/pexels-photo-3692063.jpeg" alt="Shekla Dist — Medium" class="media">', 
+        dims:'Ø 22cm', 
+        weight:'~800g', 
+        care:'Oil lightly before first use. Use low to medium heat.', 
+        created:'2025-07-10'
+      },
+      { 
+        id:'sk102', 
+        name:'Shekla Dist — Large', 
+        cat:'shekla', 
+        price:1500, 
+        desc:'Larger cooking surface with even heat distribution. Ideal for family meals.', 
+        media:'<img src="https://images.pexels.com/photos/24375991/pexels-photo-24375991.jpeg" alt="Shekla Dist — Large" class="media">', 
+        dims:'Ø 26cm', 
+        weight:'~980g', 
+        care:'Oil lightly before first use. Use low to medium heat.', 
+        created:'2025-07-15'
+      },
+      { 
+        id:'sh205', 
+        name:'Shikna Serving Bowl', 
+        cat:'shikna', 
+        price:950, 
+        desc:'Decorative and functional serving bowl with elegant curves. Perfect for traditional meals.', 
+        media:'<img src="https://images.pexels.com/photos/33669989/pexels-photo-33669989.jpeg" alt="Shikna Serving Bowl" class="media">', 
+        dims:'Ø 18cm', 
+        weight:'~420g', 
+        care:'Hand wash only. Avoid extreme temperature changes.', 
+        created:'2025-06-02'
+      },
+      { 
+        id:'sc301', 
+        name:'Abstract Sculpture — Terra', 
+        cat:'sculpture', 
+        price:3800, 
+        desc:'Modern form inspired by traditional Ethiopian motifs. A statement piece for any home.', 
+        media:'<img src="https://images.pexels.com/photos/33661403/pexels-photo-33661403.jpeg" alt="Abstract Sculpture — Terra" class="media">', 
+        dims:'H 28cm', 
+        weight:'~1.2kg', 
+        care:'Dust with soft cloth. Keep away from direct sunlight.', 
+        created:'2025-05-25'
+      }
+    ];
+
+    // ===== Helpers =====
+    const cardsEl = document.getElementById('cards');
+    const emptyEl = document.getElementById('empty');
+    const searchEl = document.getElementById('search');
+    const catEl = document.getElementById('cat');
+    const sortEl = document.getElementById('sort');
+    const modal = document.getElementById('itemModal');
+    const yearEl = document.getElementById('year');
+    yearEl.textContent = new Date().getFullYear();
+
+    function etb(n){ return new Intl.NumberFormat('am-ET').format(n) + ' ETB'; }
+
+    function cardTemplate(p){
+      return `
+        <article class="card reveal" data-id="${p.id}" data-cat="${p.cat}" data-name="${p.name.toLowerCase()}">
+          ${p.media}
+          <div class="content">
+            <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:8px">
+              <strong>${p.name}</strong>
+              <span class="price">${etb(p.price)}</span>
+            </div>
+            <p class="muted" style="margin:0 0 16px">${p.desc}</p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <a class="btn" href="https://wa.me/251996995878?text=I%20want%20to%20order%20${encodeURIComponent(p.name)}%20(${p.id})" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i> Order
+              </a>
+              <button class="btn quick" data-id="${p.id}">
+                <i class="fas fa-eye"></i> Details
+              </button>
+            </div>
+            <small class="muted" style="display:block; margin-top:12px">SKU: ${p.id} • Category: ${p.cat}</small>
+          </div>
+        </article>`;
+    }
+
+    function sortList(list, mode){
+      const arr = [...list];
+      if(mode==='price-asc') arr.sort((a,b)=>a.price-b.price);
+      else if(mode==='price-desc') arr.sort((a,b)=>b.price-a.price);
+      else if(mode==='name') arr.sort((a,b)=>a.name.localeCompare(b.name));
+      else if(mode==='newest') arr.sort((a,b)=>new Date(b.created)-new Date(a.created));
+      return arr;
+    }
+
+    function applyFilters(){
+      const q = searchEl.value.trim().toLowerCase();
+      const cat = catEl.value;
+      const sorted = sortList(PRODUCTS, sortEl.value);
+      const filtered = sorted.filter(p => {
+        const passesCat = cat==='all' ? true : p.cat===cat;
+        const passesSearch = !q || p.name.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q) || p.id.toLowerCase().includes(q);
+        return passesCat && passesSearch;
+      });
+      render(filtered);
+    }
+
+    function render(list){
+      cardsEl.innerHTML = list.map(cardTemplate).join('');
+      emptyEl.style.display = list.length ? 'none' : 'block';
+      
+      // Hook up quick view buttons
+      cardsEl.querySelectorAll('.quick').forEach(btn=>{
+        btn.addEventListener('click', ()=>openModal(btn.getAttribute('data-id')));
+      });
+      
+      // Add reveal animations
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { 
+          if (e.isIntersecting) { 
+            e.target.classList.add('visible'); 
+            obs.unobserve(e.target);
+          } 
+        });
+      }, { threshold: 0.1 });
+      
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }
+
+    function openModal(id){
+      const p = PRODUCTS.find(x=>x.id===id);
+      if(!p) return;
+      document.getElementById('modalMedia').outerHTML = p.media.replace('class="media"','id="modalMedia" class="media"');
+      document.getElementById('itemTitle').textContent = p.name;
+      document.getElementById('itemDesc').textContent = p.desc;
+      document.getElementById('itemPrice').textContent = etb(p.price);
+      document.getElementById('itemSku').textContent = p.id;
+      document.getElementById('itemCat').textContent = p.cat;
+      document.getElementById('itemDims').textContent = p.dims || '—';
+      document.getElementById('itemWeight').textContent = p.weight || '—';
+      document.getElementById('itemCare').textContent = p.care || '—';
+      const wa = document.getElementById('waBtn');
+      wa.href = `https://wa.me/251996995878?text=${encodeURIComponent('I want to order '+p.name+' ('+p.id+')')}`;
+      if(typeof modal.showModal === 'function') modal.showModal(); else modal.setAttribute('open','');
+    }
+
+    // Events
+    searchEl.addEventListener('input', applyFilters);
+    catEl.addEventListener('change', applyFilters);
+    sortEl.addEventListener('change', applyFilters);
+
+    // Handle anchors like #jebena to pre-filter
+    function initFromHash(){
+      const hash = location.hash.replace('#','');
+      const cats = ['jebena','shekla','shikna','sculpture'];
+      if(cats.includes(hash)){
+        catEl.value = hash; 
+        applyFilters();
+      } else { 
+        applyFilters(); 
+      }
+    }
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // Init
+    initFromHash();
+    window.addEventListener('hashchange', initFromHash);
+  </script>
+</body>
+</html>

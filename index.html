@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meklit Edetibeb — Handcrafted Ethiopian Pottery & Sculpture</title>
+  <meta name="description" content="Jebena, Shekla Dist, Shikna, and Ethiopian sculptures. Handmade in Addis Ababa. Order via WhatsApp or phone." />
+  <meta name="theme-color" content="#2c201a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg: #f7f0e9;
+      --text: #2a2a2a;
+      --muted: #6e665e;
+      --brand: #6b3e26;
+      --brand-2: #b56a2a;
+      --accent: #e9dccf; 
+      --line: #e7ddd1;
+      --flag-g: #0b6e3f; 
+      --flag-y: #f1c232; 
+      --flag-r: #c62828;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --gradient: linear-gradient(135deg, #3e2b22 0%, #9a5a2e 100%);
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html, body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .container {
+      max-width: 1280px;
+      margin-inline: auto;
+      padding: 0rem 5rem;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(252, 247, 241, 0.95);
+      backdrop-filter: saturate(1.8) blur(10px);
+      border-bottom: 1px solid var(--line);
+      padding: 12px 0;
+      transition: var(--transition);
+    }
+    
+    header.scrolled {
+      padding: 8px 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+    
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--gradient);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .brand:hover .logo {
+      transform: rotate(10deg);
+    }
+    
+    .brand h1 {
+      font-size: 20px;
+      line-height: 1;
+      margin: 0;
+      white-space: nowrap;
+    }
+    
+    .menu {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    
+    .menu a {
+      font-weight: 500;
+      position: relative;
+      padding: 6px 15px;
+    }
+    
+    .menu a:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--brand);
+      transition: var(--transition);
+    }
+    
+    .menu a:hover:after {
+      width: 100%;
+    }
+    
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 50px;
+      border: 1px solid #d8cfc6;
+      background: #fff;
+      color: #201510;
+      font-weight: 600;
+      transition: var(--transition);
+      gap: 8px;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+    }
+    
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+    }
+    
+    .btn--brand {
+      background: var(--brand);
+      color: #fff;
+      border-color: #201510;
+    }
+    
+    .btn--brand:hover {
+      background: #3e2b22;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: start;
+      padding: 100px 0 60px;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 100%);
+      z-index: -1;
+    }
+    
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+    
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(1.08) saturate(1.1) brightness(0.8);
+    }
+    
+    .hero-content {
+      margin: auto;
+      z-index: 1;
+      color: #fff;
+      max-width: 1200px;
+    }
+    
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(4px);
+      margin-bottom: 24px;
+      animation: fadeIn 1s ease-out;
+    }
+    
+    .hero h2 {
+      font-size: clamp(36px, 7vw, 72px);
+      line-height: 1.1;
+      margin: 0 0 24px;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+    
+    .hero p {
+      font-size: clamp(16px, 2.5vw, 20px);
+      opacity: 0.95;
+      max-width: 600px;
+      margin-bottom: 32px;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+    
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+    
+    .ribbon {
+      height: 6px;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--flag-g), var(--flag-y), var(--flag-r));
+      margin: 40px 0;
+      opacity: 0.9;
+      animation: fadeIn 1s ease-out 0.8s both;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px;
+    }
+    
+    h3 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0 0 16px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    h3:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--brand);
+      border-radius: 2px;
+    }
+    
+    .muted {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    /* Grids & Cards */
+    .grid {
+      display: grid;
+      gap: 30px;
+    }
+    
+    .grid--cats {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .grid--cards {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    
+    .card {
+      background: #fff;
+      border: 1px solid #eee3d8;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    
+    .card.visible {
+      opacity: 1;
+      transform: none;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+    }
+    
+    .card .media {
+      aspect-ratio: 4/3;
+      background: #efe7df;
+      display: grid;
+      place-items: center;
+      color: #9a8f86;
+      font-weight: 700;
+      overflow: hidden;
+    }
+    
+    .card .media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .card:hover .media img {
+      transform: scale(1.05);
+    }
+    
+    .card .content {
+      padding: 24px;
+    }
+    
+    .pill {
+      display: inline-block;
+      background: #fff;
+      border: 1px solid #e6dbcf;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    .pill:hover {
+      background: var(--brand);
+      color: white;
+      border-color: var(--brand);
+    }
+
+    /* Band */
+    .band {
+      background: var(--gradient);
+      color: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      display: grid;
+      gap: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .band::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239C92AC' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+    
+    .kicker {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #7b6f66;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 60px;
+      border-top: 1px solid var(--line);
+      color: #6b6057;
+      padding: 60px 0 20px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 16px;
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--brand);
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes fadeInUp {
+      from { 
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to { 
+        opacity: 1;
+        transform: none;
+      }
+    }
+    
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Mobile menu */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: var(--brand);
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1024px) {
+      .menu {
+        gap: 16px;
+      }
+      
+      .btn {
+        padding: 10px 20px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .nav {
+        position: relative;
+      }
+      
+      .menu:not(.mobile-menu) {
+        display: none;
+      }
+      
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--bg);
+        padding: 80px 30px 30px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        z-index: 999;
+        display: none;
+      }
+      
+      .mobile-menu.active {
+        display: flex;
+      }
+      
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    @media (min-width: 769px) {
+      .mobile-menu {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Global Nav -->
+  <header id="header">
+    <div class="container nav">
+      <a class="brand" href="/">
+        <div class="logo" aria-hidden>ME</div>
+        <h1>Meklit Edetibeb</h1>
+      </a>
+      <nav class="menu" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="services.html">Services</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="menu">
+        <a class="btn" href="https://wa.me/251996995878" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="btn btn--brand" href="tel:+251996995878">
+          <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobileToggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+    
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Mobile">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="services.html">Services</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div style="display: flex; gap: 12px; margin-top: 20px;">
+        <a class="btn" href="https://wa.me/251996995878" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a class="btn btn--brand" href="tel:+251996995878">
+          <i class="fas fa-phone"></i> Call
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero with Ethiopian coffee ceremony image -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="https://images.pexels.com/photos/9541103/pexels-photo-9541103.jpeg" alt="Ethiopian coffee ceremony" loading="eager">
+      </div>
+      
+      <div class="container hero-content">
+        <span class="badge"><i class="fas fa-map-marker-alt"></i> Addis Ababa • Handmade</span>
+        <h2>Authentic Ethiopian Pottery & Sculptures</h2>
+        <p>Discover <strong>Jebena</strong>, <strong>Shekla Dist</strong>, <strong>Shikna</strong>, and modern sculptures made by local artisans preserving centuries-old craftsmanship.</p>
+        
+        <div class="hero-actions">
+          <a class="btn btn--brand" href="products.html">
+            <i class="fas fa-shopping-bag"></i> Browse Collection
+          </a>
+          <a class="btn" href="about.html">
+            <i class="fas fa-history"></i> Our Story
+          </a>
+        </div>
+        
+        <div class="ribbon"></div>
+      </div>
+    </section>
+
+    <!-- Categories with images -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <h3>Explore Our Collection</h3>
+          <p class="muted">Discover our range of handcrafted Ethiopian pottery and sculptures, each telling a story of tradition and craftsmanship.</p>
+        </div>
+        
+        <div class="grid grid--cats">
+          <a class="card reveal" href="products.html#jebena">
+            <div class="media">
+              <img src="https://images.pexels.com/photos/24375991/pexels-photo-24375991.jpeg" alt="Jebena coffee pot" loading="lazy">
+            </div>
+            <div class="content">
+              <strong>Jebena</strong>
+              <div class="muted">Traditional coffee pots</div>
+            </div>
+          </a>
+          
+          <a class="card reveal" href="products.html#shekla">
+            <div class="media">
+              <img src="https://images.pexels.com/photos/33669989/pexels-photo-33669989.jpeg" alt="Shekla Dist clay cookware" loading="lazy">
+            </div>
+            <div class="content">
+              <strong>Shekla Dist</strong>
+              <div class="muted">Clay cookware</div>
+            </div>
+          </a>
+          
+          <a class="card reveal" href="products.html#shikna">
+            <div class="media">
+              <img src="https://images.pexels.com/photos/33661403/pexels-photo-33661403.jpeg" alt="Shikna serving bowl" loading="lazy">
+            </div>
+            <div class="content">
+              <strong>Shikna</strong>
+              <div class="muted">Serving & decor</div>
+            </div>
+          </a>
+          
+          <a class="card reveal" href="products.html#sculpture">
+            <div class="media">
+              <img src="https://images.pexels.com/photos/33694749/pexels-photo-33694749.jpeg" alt="Handmade sculpture" loading="lazy">
+            </div>
+            <div class="content">
+              <strong>Sculptures</strong>
+              <div class="muted">Traditional & modern</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured products teaser with photos -->
+    <section style="background: var(--accent);">
+      <div class="container">
+        <div class="section-header reveal">
+          <h3>Featured Collection</h3>
+          <p class="muted">Our most popular pieces, loved by customers for their beauty and craftsmanship.</p>
+        </div>
+        
+        <div class="grid grid--cards">
+          <article class="card reveal">
+            <div class="media">
+              <img src="https://media.istockphoto.com/id/148340653/photo/brewing-coffee-with-jebena-using-coal.jpg?b=1&s=612x612&w=0&k=20&c=k7nHGXITmnTL_s0CaHg6BE0-cLGzyUjP6xurBKW9mNg=" alt="Jebena — Classic Black" loading="lazy">
+            </div>
+            <div class="content">
+              <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom: 12px;">
+                <strong>Jebena — Classic Black</strong>
+                <span class="price">1,800 ETB</span>
+              </div>
+              <p class="muted" style="margin:0 0 16px">Smooth matte finish, traditional shape.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a class="btn" href="https://wa.me/251996995878?text=I%20want%20Jebena%20Classic%20Black" target="_blank" rel="noopener">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </a>
+                <a class="btn" href="products.html#jebena">
+                  <i class="fas fa-info-circle"></i> Details
+                </a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="card reveal">
+            <div class="media">
+              <img src="https://images.pexels.com/photos/3692063/pexels-photo-3692063.jpeg" alt="Shekla Dist — Medium" loading="lazy">
+            </div>
+            <div class="content">
+              <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom: 12px;">
+                <strong>Shekla Dist — Medium</strong>
+                <span class="price">1,200 ETB</span>
+              </div>
+              <p class="muted" style="margin:0 0 16px">Stove-safe clay pan for side dishes.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a class="btn" href="https://wa.me/251996995878?text=I%20want%20Shekla%20Dist%20Medium" target="_blank" rel="noopener">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </a>
+                <a class="btn" href="products.html#shekla">
+                  <i class="fas fa-info-circle"></i> Details
+                </a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="card reveal">
+            <div class="media">
+              <img src="https://images.pexels.com/photos/33118328/pexels-photo-33118328.jpeg" alt="Shikna Serving Bowl" loading="lazy">
+            </div>
+            <div class="content">
+              <div style="display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom: 12px;">
+                <strong>Shikna Serving Bowl</strong>
+                <span class="price">950 ETB</span>
+              </div>
+              <p class="muted" style="margin:0 0 16px">Decorative & functional serving bowl.</p>
+              <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                <a class="btn" href="https://wa.me/251996995878?text=I%20want%20Shikna%20Serving%20Bowl" target="_blank" rel="noopener">
+                  <i class="fab fa-whatsapp"></i> Order Now
+                </a>
+                <a class="btn" href="products.html#shikna">
+                  <i class="fas fa-info-circle"></i> Details
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px;">
+          <a class="pill" href="products.html">View All Products <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why choose us -->
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <h3>Why Choose Meklit Edetibeb?</h3>
+          <p class="muted">We combine traditional Ethiopian craftsmanship with modern quality standards.</p>
+        </div>
+        
+        <div class="grid grid--cards">
+          <article class="card reveal">
+            <div class="content">
+              <div style="font-size: 48px; color: var(--brand); margin-bottom: 16px;">
+                <i class="fas fa-hands"></i>
+              </div>
+              <strong>Authentic Craft</strong>
+              <p class="muted">Made by Ethiopian artisans using traditional methods passed down through generations.</p>
+            </div>
+          </article>
+          
+          <article class="card reveal">
+            <div class="content">
+              <div style="font-size: 48px; color: var(--brand); margin-bottom: 16px;">
+                <i class="fas fa-truck"></i>
+              </div>
+              <strong>Local Delivery</strong>
+              <p class="muted">Addis Ababa same-day courier. Regional delivery within 2–5 days across Ethiopia.</p>
+            </div>
+          </article>
+          
+          <article class="card reveal">
+            <div class="content">
+              <div style="font-size: 48px; color: var(--brand); margin-bottom: 16px;">
+                <i class="fas fa-tag"></i>
+              </div>
+              <strong>Fair Pricing</strong>
+              <p class="muted">Transparent prices directly supporting local artisans and their communities.</p>
+            </div>
+          </article>
+          
+          <article class="card reveal">
+            <div class="content">
+              <div style="font-size: 48px; color: var(--brand); margin-bottom: 16px;">
+                <i class="fas fa-credit-card"></i>
+              </div>
+              <strong>Secure Payments</strong>
+              <p class="muted">Cash on delivery or bank transfer. Online payment options coming soon.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo strip / studio -->
+    <section>
+      <div class="container">
+        <div class="band">
+          <div style="display: flex; justify-content: space-between; gap: 24px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+              <div class="kicker" style="color: #efe5db">From our studio</div>
+              <strong style="font-size: 28px; display: block; margin-bottom: 12px;">See the Craft — Forming, Engraving, and Finishing</strong>
+              <p style="color: #efe5db; margin: 0">Each piece is made with care and cultural pride, preserving Ethiopian heritage.</p>
+            </div>
+            <a class="btn" href="about.html" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.3);">
+              <i class="fas fa-history"></i> Our Story
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="background: var(--accent);">
+      <div class="container">
+        <div class="section-header reveal">
+          <h3>Customer Stories</h3>
+          <p class="muted">Hear what our customers have to say about our products and service.</p>
+        </div>
+        
+        <div class="grid grid--cards">
+          <article class="card reveal">
+            <div class="content">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: grid; place-items: center; color: white;">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <strong>Selam T.</strong>
+                  <p class="muted" style="margin: 0">Addis Ababa</p>
+                </div>
+              </div>
+              <p class="muted">"The Jebena I purchased is not only beautiful but functional. It makes the perfect coffee every time and has become the centerpiece of my coffee ceremonies."</p>
+            </div>
+          </article>
+          
+          <article class="card reveal">
+            <div class="content">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: grid; place-items: center; color: white;">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <strong>Michael J.</strong>
+                  <p class="muted" style="margin: 0">London, UK</p>
+                </div>
+              </div>
+              <p class="muted">"I ordered the sculpture as a gift, and it arrived perfectly packaged. The craftsmanship is exceptional, and it's clear that great care went into making it."</p>
+            </div>
+          </article>
+          
+          <article class="card reveal">
+            <div class="content">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--gradient); display: grid; place-items: center; color: white;">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <strong>Azeb K.</strong>
+                  <p class="muted" style="margin: 0">Dire Dawa</p>
+                </div>
+              </div>
+              <p class="muted">"The Shekla Dist I purchased cooks evenly and has held up beautifully. It's wonderful to cook with something made by local artisans using traditional methods."</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section>
+      <div class="container">
+        <div class="band">
+          <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+            <h3 style="margin-bottom: 16px; color: white;">Ready to Bring Ethiopian Craftsmanship to Your Home?</h3>
+            <p style="color: #efe5db; margin-bottom: 32px;">Browse our collection or contact us for custom orders and wholesale inquiries.</p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+              <a class="btn" href="products.html" style="background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.3);">
+                <i class="fas fa-shopping-bag"></i> Shop Now
+              </a>
+              <a class="btn btn--brand" href="contact.html">
+                <i class="fas fa-envelope"></i> Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+          <div>
+            <div class="logo" style="margin-bottom: 16px;">ME</div>
+            <h4 style="margin-bottom: 16px;">Meklit Edetibeb</h4>
+            <p style="margin-bottom: 20px;">Handcrafted Ethiopian pottery and sculptures made with tradition and care in Addis Ababa.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="https://wa.me/251996995878" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 style="margin-bottom: 16px;">Quick Links</h4>
+            <div style="display: grid; gap: 12px;">
+              <a href="index.html">Home</a>
+              <a href="products.html">Products</a>
+              <a href="services.html">Services</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact</a>
+            </div>
+          </div>
+          
+          <div>
+            <h4 style="margin-bottom: 16px;">Contact Info</h4>
+            <div style="display: grid; gap: 12px;">
+              <div><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> Addis Ababa, Ethiopia</div>
+              <div><i class="fas fa-phone" style="margin-right: 10px;"></i> +251 996 995878</div>
+              <div><i class="fas fa-envelope" style="margin-right: 10px;"></i> <a href="mailto:sawerkit23@gmail.com">sawerkit23@gmail.com</a></div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="height: 2px; background: linear-gradient(90deg, var(--flag-g), var(--flag-y), var(--flag-r)); margin: 40px 0 20px; border-radius: 2px; opacity: 0.7;"></div>
+        
+        <p style="margin: 14px 0; text-align: center;">
+          © <span id="year"></span> Meklit Edetibeb • Addis Ababa • Handmade with ❤️
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Simple reveal-on-scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { 
+        if (e.isIntersecting) { 
+          e.target.classList.add('visible'); 
+          obs.unobserve(e.target);
+        } 
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    mobileToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (mobileMenu.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+        document.body.style.overflow = 'hidden';
+      } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
+</body>
+</html>
